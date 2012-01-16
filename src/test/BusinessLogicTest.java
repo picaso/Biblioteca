@@ -18,7 +18,7 @@ import static org.mockito.Mockito.when;
 
 /**
  * Created by IntelliJ IDEA.
- * User: Osaide Ogbeifun       ...
+ * User: Osaide Ogbeifun
  * Date: 1/15/12
  * Time: 3:43 PM
  * To change this template use File | Settings | File Templates.
