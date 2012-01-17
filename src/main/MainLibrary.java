@@ -26,6 +26,8 @@ public class MainLibrary {
         BookList.add(book3);
 
         Customer sampleCustomer = new Customer();
+	    sampleCustomer.setCustomerID("111-1111");
+	    sampleCustomer.setName("Sample Customer");
 
         Printer print = new Printer();
 
