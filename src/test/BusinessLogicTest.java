@@ -18,44 +18,44 @@ import static org.mockito.Mockito.when;
 
 /**
  * Created by IntelliJ IDEA.
- * User: Osaide Ogbeifun
- * Date: 1/15/12
- * Time: 3:43 PM
- * To change this template use File | Settings | File Templates.
+ *
+ * @author Osaide Ogbeifun
+ *         date: 1/15/12
+ *         time: 3:43 PM
  */
 
 @RunWith(Parameterized.class)
 public class BusinessLogicTest {
 
-    private String name = "";
-    private String bookId = "";
+	private String name = "";
+	private String bookId = "";
 
-    @Parameterized.Parameters
-    public static Collection<Object[]> data() {
-        Object[][] data = Parameter.MOCK_BOOKS;
-        return Arrays.asList(data);
-    }
+	@Parameterized.Parameters
+	public static Collection<Object[]> data() {
+		Object[][] data = Parameter.MOCK_BOOKS;
+		return Arrays.asList(data);
+	}
 
-    public BusinessLogicTest(String bookID, String name) {
-        this.name = name;
-        this.bookId = bookID;
+	public BusinessLogicTest(String bookID, String name) {
+		this.name = name;
+		this.bookId = bookID;
 
-    }
+	}
 
-    @Test
-    public void testReserveBook() throws Exception {
-        ArrayList<Books> books = new ArrayList<Books>() ;
-        Books book = mock(Books.class);
-        books.add(book);
-        BusinessLogic bl = new BusinessLogic();
-        when(book.getBookId()).thenReturn(bookId);
-        //Positive Testing
-        System.setIn(new ByteArrayInputStream(bookId.getBytes()));
-        assertEquals(bl.reserveBook(books), true);
+	@Test
+	public void testReserveBook() throws Exception {
+		ArrayList<Books> books = new ArrayList<Books>();
+		Books book = mock(Books.class);
+		books.add(book);
+		BusinessLogic bl = new BusinessLogic();
+		when(book.getBookId()).thenReturn(bookId);
+		//Positive Testing
+		System.setIn(new ByteArrayInputStream(bookId.getBytes()));
+		assertEquals(bl.reserveBook(books), true);
 
-        //Negative Testing
-        System.setIn(new ByteArrayInputStream(name.getBytes()));
-        assertEquals(bl.reserveBook(books), false);
+		//Negative Testing
+		System.setIn(new ByteArrayInputStream(name.getBytes()));
+		assertEquals(bl.reserveBook(books), false);
 
-    }
+	}
 }
