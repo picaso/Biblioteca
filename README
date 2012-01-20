@@ -1,0 +1,9 @@
+Mockito [http://code.google.com/p/mockito/] was used to create mock objects for unit testing.
+(needs to be added to your build path in your IDE if you want to run it from an IDE)
+
+Build:
+Final unit Tests and the final JAR file are created using ant builder. 
+
+To Run:
+>>$ cd jar
+>>$ java –jar Biblioteca.jar
