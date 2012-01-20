@@ -1,7 +1,8 @@
 package test;
 
 
-import main.MenuItem;
+import main.mainlibrary.MenuItem;
+import main.mainlibrary.Printer;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
@@ -53,7 +54,7 @@ public class PrinterTest {
 		when(book.getId()).thenReturn(bookId);
 		when(book.getName()).thenReturn(name);
 
-		main.Printer.printProduct(prd);
+		Printer.printProduct(prd);
 
 		assertEquals(book.getName(), name);
 		assertEquals(book.getId(), bookId);
@@ -71,7 +72,7 @@ public class PrinterTest {
 		when(menuItem.getQuestion()).thenReturn(name);
 		when(menuItem.getQuestionID()).thenReturn(questionId);
 
-		main.Printer.printMenu(menu);
+		Printer.printMenu(menu);
 
 		assertEquals(menuItem.getQuestion(), name);
 		assertEquals(menuItem.getQuestionID(), questionId);

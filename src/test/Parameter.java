@@ -24,9 +24,9 @@ public class Parameter {
 
 	static {
 		MOCK_CUSTOMER = new Object[][]{
-				{"111-1111", "Customer Name"},
-				{"111-1112", "Customer Name 2"},
-				{"111-1113", "Customer Name 3"}
+				{"111-1111", "Customer Name", "Password"},
+				{"111-1112", "Customer Name 2", "Password2"},
+				{"111-1113", "Customer Name 3", "Password3"}
 		};
 	}
 

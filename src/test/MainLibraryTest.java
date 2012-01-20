@@ -1,7 +1,7 @@
 package test;
 
 
-import main.MainLibrary;
+import main.mainlibrary.MainLibrary;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
@@ -24,7 +24,7 @@ import static org.mockito.Mockito.when;
  */
 
 @RunWith(Parameterized.class)
-public class ProductTest {
+public class MainLibraryTest {
 
 	private String name = "";
 	private String id = "";
@@ -37,7 +37,7 @@ public class ProductTest {
 		return Arrays.asList(data);
 	}
 
-	public ProductTest(String id, String name, String dirName, String rating) {
+	public MainLibraryTest(String id, String name, String dirName, String rating) {
 		this.name = name;
 		this.id = id;
 		this.dirName = dirName;
@@ -68,6 +68,7 @@ public class ProductTest {
 		ArrayList<main.product.ProductIntf> movies = new ArrayList<main.product.ProductIntf>();
 		main.product.ProductIntf movie = mock(main.product.Movies.class);
 		movies.add(movie);
+
 
 		when(movie.getId()).thenReturn(id);
 

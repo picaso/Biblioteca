@@ -11,7 +11,7 @@
     <property name="testsrcdir" value="${basedir}/src/test"/>
     <property name="libdir" value="${basedir}/lib"/>
     <property name="jar.dir" value="${basedir}/jar"/>
-    <property name="main-class" value="main.MainLibrary"/>
+    <property name="main-class" value="main.mainlibrary.MainLibrary"/>
 
     <path id="test">
         <pathelement location="${bindir}"/>
