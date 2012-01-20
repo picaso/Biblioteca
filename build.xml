@@ -1,82 +1,83 @@
 <project name="Biblioteca" default="main" basedir=".">
 
-	<!--
+    <!--
         @author: Osaide Ogbeifun
     -->
 
 
-	<property name="dist" value="${basedir}/dist" />
-	<property name="bindir" value="${basedir}/bin" />
-	<property name="srcdir" value="${basedir}/src/main" />
-	<property name="testsrcdir" value="${basedir}/src/test" />
-	<property name="libdir" value="${basedir}/lib" />
-	<property name="jar.dir" value="${basedir}/jar" />
-	<property name="main-class" value="main.MainLibrary" />
-	
-<path id="test" >
-    <pathelement location="${bindir}"/>
-   
-</path>
-	<target name="clean" description="Remove all the compiled classes.">
-		<delete dir="${dist}" />
-		<delete dir="${bindir}" />
-		<delete dir="${jar.dir}" />
+    <property name="dist" value="${basedir}/dist"/>
+    <property name="bindir" value="${basedir}/bin"/>
+    <property name="srcdir" value="${basedir}/src/main"/>
+    <property name="testsrcdir" value="${basedir}/src/test"/>
+    <property name="libdir" value="${basedir}/lib"/>
+    <property name="jar.dir" value="${basedir}/jar"/>
+    <property name="main-class" value="main.MainLibrary"/>
 
-	</target>
+    <path id="test">
+        <pathelement location="${bindir}"/>
 
-	<target name="compile" depends="clean" description="Compile all Java sources">
-		<mkdir dir="${jar.dir}" />
-		<mkdir dir="${bindir}" />
+    </path>
+    <target name="clean" description="Remove all the compiled classes.">
+        <delete dir="${dist}"/>
+        <delete dir="${bindir}"/>
+        <delete dir="${jar.dir}"/>
 
-		<javac source="1.6" srcdir="${srcdir}; ${testsrcdir}" destdir="${bindir}" deprecation="on" includeantruntime="false">
-			<classpath>
-			<path refid="test"/>
-				<pathelement location="${bindir}" />
-				<fileset dir="${libdir}">
-					<include name="*.jar" />
-				</fileset>
-			</classpath>
-		</javac>
-	</target>
+    </target>
 
-	<target name="jar" depends="compile">
-		<jar destfile="${jar.dir}/Biblioteca.jar" basedir="${bindir}">
-			<manifest>
-				<attribute name="Main-Class" value="${main-class}" />
-			</manifest>
-		</jar>
-	</target>
+    <target name="compile" depends="clean" description="Compile all Java sources">
+        <mkdir dir="${jar.dir}"/>
+        <mkdir dir="${bindir}"/>
 
-	<target name="test" depends="jar" description="Run all tests">
-		<mkdir dir="${basedir}/dist/test-reports" />
-		<junit printsummary="yes" haltonfailure="no">
-			<formatter type="plain" />
-			<classpath>
-				<path location="${bindir}/test/" />
-				<fileset dir="${libdir}">
-					<include name="*.jar" />
-				</fileset>
-			</classpath>
-			<batchtest fork="yes" todir="${basedir}/dist/test-reports">
-				<fileset dir="${testsrcdir}">
-					<include name="**/*Test*.java" />
-				</fileset>
-			</batchtest>
-		</junit>
+        <javac source="1.6" srcdir="${srcdir}; ${testsrcdir}" destdir="${bindir}" deprecation="on"
+               includeantruntime="false">
+            <classpath>
+                <path refid="test"/>
+                <pathelement location="${bindir}"/>
+                <fileset dir="${libdir}">
+                    <include name="*.jar"/>
+                </fileset>
+            </classpath>
+        </javac>
+    </target>
 
-	</target>
+    <target name="jar" depends="compile">
+        <jar destfile="${jar.dir}/Biblioteca.jar" basedir="${bindir}">
+            <manifest>
+                <attribute name="Main-Class" value="${main-class}"/>
+            </manifest>
+        </jar>
+    </target>
+
+    <target name="test" depends="jar" description="Run all tests">
+        <mkdir dir="${basedir}/dist/test-reports"/>
+        <junit printsummary="yes" haltonfailure="no">
+            <formatter type="plain"/>
+            <classpath>
+                <path location="${bindir}/test/"/>
+                <fileset dir="${libdir}">
+                    <include name="*.jar"/>
+                </fileset>
+            </classpath>
+            <batchtest fork="yes" todir="${basedir}/dist/test-reports">
+                <fileset dir="${testsrcdir}">
+                    <include name="**/*Test*.java"/>
+                </fileset>
+            </batchtest>
+        </junit>
+
+    </target>
 
 
-	<target name="main" depends="test">
-		<echo message="===================================" />
-		<echo message="README!" />
-		<echo message="===================================" />
-		<echo message="To Run this file, go to ${jar.dir} "/>
-		<echo message="and put in command 'java -jar Biblioteca.jar' " />
-		<echo message="===================================" />
-		<echo message="JUNIT TEST OUTPUT" />
-		<echo message="===================================" />
-		<echo message="Test output directory: ${basedir}/dist/test-reports" />
-		<echo message="===================================" />
-	</target>
+    <target name="main" depends="test">
+        <echo message="==================================="/>
+        <echo message="README!"/>
+        <echo message="==================================="/>
+        <echo message="To Run this file, go to ${jar.dir} "/>
+        <echo message="and put in command 'java -jar Biblioteca.jar' "/>
+        <echo message="==================================="/>
+        <echo message="JUNIT TEST OUTPUT"/>
+        <echo message="==================================="/>
+        <echo message="Test output directory: ${basedir}/dist/test-reports"/>
+        <echo message="==================================="/>
+    </target>
 </project>

@@ -10,13 +10,13 @@ package test;
 
 public class Parameter {
 
-	public static Object[][] MOCK_BOOKS;
+	public static Object[][] MOCK_PRODUCTS;
 
 	static {
-		MOCK_BOOKS = new Object[][]{
-				{"1", "Test Book Name"},
-				{"2", "Test Book Name 2"},
-				{"3", "Test Book Name 3"}
+		MOCK_PRODUCTS = new Object[][]{
+				{"1", "Test Book Name", "Director's Name", "Rating"},
+				{"2", "Test Book Name 2", "Director's Name 2", "Rating 2"},
+				{"3", "Test Book Name 3", "Director's Name 3", "Rating 3"},
 		};
 	}
 
@@ -49,4 +49,5 @@ public class Parameter {
 				{3, "1", "Test ITEM Name 3"}
 		};
 	}
+
 }

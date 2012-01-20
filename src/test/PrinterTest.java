@@ -1,9 +1,7 @@
 package test;
 
 
-import main.Books;
 import main.MenuItem;
-import main.Printer;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
@@ -46,20 +44,19 @@ public class PrinterTest {
 	}
 
 	@Test
-	public void testPrintBooks() throws Exception {
+	public void testPrintProducts() throws Exception {
 
-		ArrayList<Books> books = new ArrayList<Books>();
-		Printer print = new Printer();
-		Books book = mock(Books.class);
-		books.add(book);
+		ArrayList<main.product.ProductIntf> prd = new ArrayList<main.product.ProductIntf>();
+		main.product.ProductIntf book = mock(main.product.Books.class);
+		prd.add(book);
 
-		when(book.getBookId()).thenReturn(bookId);
+		when(book.getId()).thenReturn(bookId);
 		when(book.getName()).thenReturn(name);
 
-		print.printBooks(books);
+		main.Printer.printProduct(prd);
 
 		assertEquals(book.getName(), name);
-		assertEquals(book.getBookId(), bookId);
+		assertEquals(book.getId(), bookId);
 
 
 	}
@@ -68,14 +65,13 @@ public class PrinterTest {
 	@Test
 	public void testPrintMenu() throws Exception {
 		ArrayList<MenuItem> menu = new ArrayList<MenuItem>();
-		Printer print = new Printer();
 		MenuItem menuItem = mock(MenuItem.class);
 		menu.add(menuItem);
 
 		when(menuItem.getQuestion()).thenReturn(name);
 		when(menuItem.getQuestionID()).thenReturn(questionId);
 
-		print.printMenu(menu);
+		main.Printer.printMenu(menu);
 
 		assertEquals(menuItem.getQuestion(), name);
 		assertEquals(menuItem.getQuestionID(), questionId);

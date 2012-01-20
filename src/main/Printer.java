@@ -11,18 +11,18 @@ import java.util.ArrayList;
  */
 
 public class Printer {
-	public void printBooks(ArrayList<Books> Books) {
+	public static void printProduct(ArrayList<main.product.ProductIntf> product) {
 		System.out.println("\n");
 		System.out.println("**************************");
-		System.out.println("Available Book titles");
+		System.out.println("Available titles");
 		System.out.println("**************************");
-		for (Books Book : Books) {
-			System.out.println(Book.getBookId() + ": " + Book.getName());
+		for (main.product.ProductIntf prd : product) {
+			System.out.println(prd.getId() + ": " + prd.getName());
 		}
 
 	}
 
-	public void printMenu(ArrayList<MenuItem> Menu) {
+	public static void printMenu(ArrayList<MenuItem> Menu) {
 		System.out.println("\n");
 		System.out.println("The Bangalore Public Library System : BIBLIOTECA");
 		System.out.println("\n");
@@ -35,7 +35,7 @@ public class Printer {
 		System.out.print("Menu Item # %>: ");
 	}
 
-	public void printCustomer(Customer sampleCustomer) {
+	public static void printCustomer(Customer sampleCustomer) {
 		System.out.println("\n");
 		//System.out.println(sampleCustomer.getCustomerID());  //Not implemented as per requirement
 		System.out.println("%>: Please talk to Librarian. Thank you.");
