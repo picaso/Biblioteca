@@ -29,8 +29,36 @@ public class MainLibrary {
 		 * as entering data for each instantiation would be rather tedious.
 		 *
 		 */
-		String[] movieName = {"A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O"};
-		String[] directorName = {"AA", "BB", "CC", "DD", "EE", "FF", "GG", "HH", "II", "JJ", "KK", "LL", "MM", "NN", "OO"};
+		String[] movieName = {"Idiocracy",
+				"Il Cappotto (a.k.a. Overcoat)",
+				"In Their Own Words: The Tuskegee Airmen",
+				"Indomitable Teddy Roosevelt (Smithsonian)",
+				"Jake & The Never Land Pirates: Peter Pan Returns",
+				"James Cagney Collection (4-Disc): Blood On Sun / Something To Sing About / Great Guy / Time Of Your Life",
+				"Japanese Superhero: Starman (3-Disc)",
+				"Jared Meeker's Serious Shred: Essential Concepts (Book w/ DVD)",
+				"Jerome Rose: Jerome Rose Plays Brahms: Live In Concert (Blu-ray)",
+				"Jersey Shore (Paramount): Season 1: Uncensored",
+				"Jersey Shore (Paramount): Season 2",
+				"Jersey Shore (Paramount): Season 3",
+				"Jimmy Martin: King Of Bluegrass: The Life And Times Of Jimmy Martin",
+				"John Adams",
+				"John Adams (Blu-ray)"};
+		String[] directorName = {"Fox",
+				"Raro Video USA",
+				"Bryton Entertainment",
+				"Smithsonian",
+				"Buena Vista",
+				"Alpha Video",
+				"Alpha Video",
+				"Alfred Publishing",
+				"Medici Classics",
+				"Paramount",
+				"Paramount",
+				"Paramount",
+				"Thrill Jockey",
+				"HBO",
+				"HBO"};
 		String[] rating = {"1", "10", "N/A", "N/A", "1", "4", "6", "10", "9", "2", "3", "N/A", "2", "2", "5"};
 
 		ProductIntf book1 = new Books("1", "Extreme Programming");
@@ -41,7 +69,7 @@ public class MainLibrary {
 		 * Dynamic Instantiation of Movies Class. This is just to make my life easier
 		 */
 		for (int i = 0; i < movieName.length; i++) {
-			MovieList.add(new main.product.Movies(Integer.toString(i), movieName[i], directorName[i], rating[i]));
+			MovieList.add(new main.product.Movies(Integer.toString(i + 1), movieName[i], directorName[i], rating[i]));
 		}
 
 		BookList.add(book1);
@@ -151,7 +179,6 @@ public class MainLibrary {
 	}
 
 	public static CustomerIntf authenticateUser(HashMap<String, CustomerIntf> users) {
-		CustomerIntf customer;
 		String LibraryAssistant = "111-1111";
 
 
@@ -173,9 +200,10 @@ public class MainLibrary {
 			System.out.println("Wrong UserName or Password...");
 		return users.get(LibraryAssistant);
 
+
 	}
 
-	private static String keyInput() {
+	public static String keyInput() {
 		InputStreamReader inputStream = new InputStreamReader(System.in);
 		BufferedReader reader = new BufferedReader(inputStream);
 		String data = "";

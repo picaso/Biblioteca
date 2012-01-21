@@ -28,7 +28,7 @@ public abstract class Product {
 
 	public String getName() {
 		if (dirName != null) {
-			return name + " " + dirName + " " + rating;
+			return name + " By: " + dirName + " Rating[0-10]: " + rating;
 		}
 		return name;
 	}
