@@ -82,7 +82,6 @@ public class MainLibrary {
 		users.put(sampleCustomer.getCustomerID(), sampleCustomer);
 		users.put(sampleCustomer2.getCustomerID(), sampleCustomer2);
 
-		System.out.println(sampleCustomer2.getCustomerID() + " " + sampleCustomer2.getPassword());
 		MenuItem item1 = new MenuItem(1, "List Book Catalog");
 		MenuItem item2 = new MenuItem(2, "Reserve a Book");
 		MenuItem item3 = new MenuItem(3, "What is my Library Number?");
