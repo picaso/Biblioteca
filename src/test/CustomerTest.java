@@ -28,6 +28,7 @@ import static org.mockito.Mockito.mock;
 public class CustomerTest {
 
 
+	private String name = "";
 	private String id = "";
 	private String password = "";
 
@@ -38,8 +39,8 @@ public class CustomerTest {
 		return Arrays.asList(data);
 	}
 
-	public CustomerTest(String id, String password) {
-
+	public CustomerTest(String id, String name, String password) {
+		this.name = name;
 		this.id = id;
 		this.password = password;
 

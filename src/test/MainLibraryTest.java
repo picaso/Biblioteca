@@ -86,6 +86,6 @@ public class MainLibraryTest {
 	@Test
 	public void testMovieGetterWithUniqueReturn() {
 		main.product.ProductIntf movie = new main.product.Movies(id, name, dirName, rating);
-		assertEquals(movie.getName(), name + " " + dirName + " " + rating);
+		assertEquals(movie.getName(), name + " By: " + dirName + " Rating[0-10]: " + rating);
 	}
 }
